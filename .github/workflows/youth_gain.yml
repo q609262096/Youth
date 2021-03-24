@@ -1,0 +1,38 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node	
+
+name: 中青浏览赚&看看赚	
+
+on:	
+  workflow_dispatch:	
+  schedule:	
+     - cron: '5 1 * * *'	
+  watch:	
+    types: started	
+jobs:	
+  build:	
+    runs-on: ubuntu-latest	
+    if: github.event.repository.owner.id == github.event.sender.id	
+    env:	
+      YOUTH_START: ${{ secrets.YOUTH_START }}	
+      YOUTH_LOOK: ${{ secrets.YOUTH_LOOK }}	
+      TZ: Asia/shanghai	
+    steps:	
+      - name: Checkout	
+        uses: actions/checkout@v1	
+      - name: Use Node.js 14.x	
+        uses: actions/setup-node@v1	
+        with:	
+          node-version: 14.x	
+      - name: npm install	
+        run: |	
+          npm install	
+          	
+      - name: '运行 【中青看点浏览赚】'	
+        if: env.YOUTH_START
+        run: |	
+          node Script/youth_gain.js	
+        env:	
+          YOUTH_START: ${{ secrets.YOUTH_START }}	
+          YOUTH_LOOK: ${{ secrets.YOUTH_LOOK }}	 
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
