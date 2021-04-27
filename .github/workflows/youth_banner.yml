@@ -32,5 +32,4 @@ jobs:
           node Script/youth_banner.js	
         env:	
          YOUTH_BANNER: ${{ secrets.YOUTH_BANNER }}	 
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+        
