@@ -1,6 +1,6 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node	
 
-name: 中青看看赚	
+name: 中青浏览赚	
 
 on:	
   workflow_dispatch:	
@@ -26,7 +26,7 @@ jobs:
         run: |	
           npm install	
           	
-      - name: '运行 【中青看看赚】'	
+      - name: '运行 【中青浏览赚】'	
         if: env.YOUTH_BANNER
         run: |	
           node Script/youth_banner.js	
