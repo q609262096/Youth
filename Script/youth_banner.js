@@ -16,10 +16,10 @@ const $ = new Env("中青看看赚");
 $.suffix = i => i > 0 ? i + 1 + '' : '';
 $.isRewrite = 'undefined' !== typeof $request;
 $.isResponse = 'undefined' !== typeof $response;
-const youthBanner = 'youth_banner';
 const youthAndroidReadtime = 'youth_android_readtime';
 const youthAndroidReward = 'youth_android_reward';
 const youthAndroidNewtask = 'youth_android_newtask';
+let startbodys = $.getdata('youth_banner');
 const delFirstZeroRewardData = 0; // 是否移除首次领取奖励无青豆的数据，0-否、1-是
 
 !(async () => {
