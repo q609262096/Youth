@@ -70,7 +70,7 @@ jobs:
         env:	
           YOUTH_READ: ${{ secrets.YOUTH_READ5 }}	
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME5 }}
-     - name: '运行 【中青看点自动阅读六】'	
+      - name: '运行 【中青看点自动阅读六】'	
         if: env.YOUTH_READ6
         run: |	
           node Script/Youth_Read.js	
