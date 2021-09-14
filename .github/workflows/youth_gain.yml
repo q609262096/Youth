@@ -30,6 +30,12 @@ jobs:
         if: env.YOUTH_START
         run: |
           node Script/youth_gain.js
+
+      - name: '运行 【中青浏览赚】'
+        if: env.YOUTH_LOOK
+        run: |
+          node Script/youth_gain.js
+
         env:
           YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
