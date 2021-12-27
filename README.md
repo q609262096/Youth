@@ -44,5 +44,8 @@
             <td>
                 <p>
                     iOS15 &amp; QuantumultX
-                </p>
+               </p>
             </td>
+        </tr>
+    </tbody>
+</table>
