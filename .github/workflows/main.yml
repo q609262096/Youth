@@ -29,7 +29,7 @@ jobs:
             git config --global user.email "royyanxin@gmail.com" 
             git add . 
             git commit -m '+'  
-            git push -u origin main
+            git push -u origin master
             echo "完成同步"
         else
             echo "规则未修改"
