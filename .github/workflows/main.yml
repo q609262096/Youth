@@ -95,7 +95,7 @@ jobs:
       - name: Move files to publish directory
         run: |
           mkdir -p publish
-          cp *.txt ./publish/
+          cp *.list ./publish/
           mv ruleset ./publish/
 
       - name: Release and upload assets
