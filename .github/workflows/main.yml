@@ -76,10 +76,10 @@ jobs:
 
       - name: Generate private.txt file
         run: |
-          curl -sSL ${custom_private} | awk -F ':' '/^full:/ {printf "%s\n", $2}' > private.txt
-          curl -sSL ${custom_private} | awk -F ':' '/^domain:/ {printf ".%s\n", $2}' >> private.txt
-          curl -sSL ${custom_private} | awk -F ':' '/^full:/ {printf "DOMAIN,%s\n", $2}' > ruleset/private.txt
-          curl -sSL ${custom_private} | awk -F ':' '/^domain:/ {printf "DOMAIN-SUFFIX,%s\n", $2}' >> ruleset/private.txt
+          curl -sSL ${custom_private} | awk -F ':' '/^full:/ {printf "%s\n", $2}' > private.list
+          curl -sSL ${custom_private} | awk -F ':' '/^domain:/ {printf ".%s\n", $2}' >> private.list
+          curl -sSL ${custom_private} | awk -F ':' '/^full:/ {printf "DOMAIN,%s\n", $2}' > ruleset/private.list
+          curl -sSL ${custom_private} | awk -F ':' '/^domain:/ {printf "DOMAIN-SUFFIX,%s\n", $2}' >> ruleset/private.list
 
       - name: Generate gfw.txt file
         run: |
